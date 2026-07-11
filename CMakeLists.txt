@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 project(tetra_demodulator)
 
-set(CMAKE_INSTALL_PREFIX "/usr/")
+# set(CMAKE_INSTALL_PREFIX "/usr/")  # allow -DCMAKE_INSTALL_PREFIX override
 include(GNUInstallDirs)
 
 file(GLOB SRC LIST_DIRECTORIES false 
