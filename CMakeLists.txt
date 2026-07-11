@@ -35,6 +35,16 @@ if (NOT SDRPP_MODULE_CMAKE)
 endif ()
 
 
+
+# --- out-of-tree: import sdrpp_core from local install ---
+if (NOT TARGET sdrpp_core)
+  add_library(sdrpp_core SHARED IMPORTED)
+  set_target_properties(sdrpp_core PROPERTIES
+    IMPORTED_LOCATION "/home/user/Applications/SDRPlusPlus/lib/libsdrpp_core.so"
+    INTERFACE_INCLUDE_DIRECTORIES "/home/user/Documents/DragonSDR/AlexandreRouma/SDRPlusPlus/core/src;/home/user/Documents/DragonSDR/AlexandreRouma/SDRPlusPlus/core/src/imgui;/home/user/Documents/DragonSDR/AlexandreRouma/SDRPlusPlus/core/libcorrect/include"
+  )
+endif ()
+
 include(${SDRPP_MODULE_CMAKE})
 
 if(MSVC)
